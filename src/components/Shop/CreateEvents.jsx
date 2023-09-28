@@ -15,7 +15,6 @@ const CreateEvents = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [images, setImages] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -67,8 +66,6 @@ const CreateEvents = () => {
     const files = Array.from(event.target.files);
     setSelectedFiles(files);
   };
-
-  //   const today = ""
 
   const handleSubmit = async (e) => {
     e.preventDefault();

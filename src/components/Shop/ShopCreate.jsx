@@ -15,6 +15,7 @@ const ShopCreate = () => {
   const [zipCode, setZipCode] = useState();
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();

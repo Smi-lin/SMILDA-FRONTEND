@@ -18,10 +18,10 @@ const Hero = () => {
           Best Collection for <br /> Women Wears & Needs
         </h1>
         <p className="pt-5 text-[16px] font-[poppins] font-[400] text-[#000000ba]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar
-          neque a felis <br/> interdum, at pulvinar ligula lobortis. In non lorem vel
-          mauris tristique facilisis. <br/> Nulla condimentum lectus vel lectus
-           rutrum, ut euismod lectus sodales
+          Discover the finest selection of women's clothing and essential
+          products. <br/> Your one-stop destination for fashion, lifestyle, and
+          everyday necessities  tailored <br/> to women's tastes and preferences.
+          Explore the best collection curated just for you.
         </p>
         <Link to="/products" className="inline-block">
           <div className={`${styles.button} mt-5`}>

@@ -27,7 +27,7 @@ const Signup = () => {
   const [passLength, setPassLength] = useState(false);
 
   const { isLoading, isSuccess, isLoggedIn, message } = useSelector(
-    (state) => state.auth
+    (state) => state.authReducer
   );
 
   const handleInputChange = (e) => {

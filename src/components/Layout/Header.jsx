@@ -235,9 +235,12 @@ const Header = ({ activeHeading }) => {
             </Link>
           </div>
           <div>
-            <div className="relative mr-[20px]">
+            <div
+              className="relative mr-[20px]"
+              onClick={() => setOpenCart(true)}
+            >
               <AiOutlineShoppingCart size={30} />
-              <span className="absolute top-0 right-0 rounded-full bg-[#3bc177] w-4 h-4 top text-[#fff]">
+              <span class="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
                 {cart && cart.length}
               </span>
             </div>
@@ -282,11 +285,7 @@ const Header = ({ activeHeading }) => {
                       return (
                         <Link to={`/product/${Product_name}`}>
                           <div className="flex items-center">
-                            <img
-                              src={i.image_Url[0]?.url}
-                              alt=""
-                              className="w-[50px] mr-2"
-                            />
+                           
                             <h5>{i.name}</h5>
                           </div>
                         </Link>
