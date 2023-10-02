@@ -34,7 +34,6 @@ import {
   ShopOrderDetails,
   ShopAllRefunds,
   ShopSettingsPage,
-  ShopWithdrawMoneyPage,
   ShopProfilePage,
 } from "./routes/ShopRoute";
 import { ToastContainer } from "react-toastify";
@@ -71,7 +70,7 @@ const App = () => {
     dispatch(getAllEvents());
     getStripeApiKey();
   }, []);
-  
+
   return (
     <BrowserRouter>
       {stripeApiKey && (
@@ -147,28 +146,24 @@ const App = () => {
         <Route
           path="/shop/:id"
           element={
-            <SellerProtectedRoute
-
-            >
-            <ShopHomePage />
-              </SellerProtectedRoute>
+            <SellerProtectedRoute>
+              <ShopHomePage />
+            </SellerProtectedRoute>
           }
         />
         <Route
           path="/settings"
           element={
-            <SellerProtectedRoute
-
-            >
-            <ShopSettingsPage />
-              </SellerProtectedRoute>
+            <SellerProtectedRoute>
+              <ShopSettingsPage />
+            </SellerProtectedRoute>
           }
         />
         <Route
           path="/dashboard"
           element={
             <SellerProtectedRoute>
-            <ShopDashboardPage />
+              <ShopDashboardPage />
             </SellerProtectedRoute>
           }
         />
@@ -176,15 +171,15 @@ const App = () => {
           path="/dashboard-profile"
           element={
             <SellerProtectedRoute>
-            <ShopProfilePage />
-             </SellerProtectedRoute>
+              <ShopProfilePage />
+            </SellerProtectedRoute>
           }
         />
         <Route
           path="/dashboard-createProducts"
           element={
             <SellerProtectedRoute>
-            <ShopCreateProduct />
+              <ShopCreateProduct />
             </SellerProtectedRoute>
           }
         />
@@ -192,59 +187,52 @@ const App = () => {
           path="/dashboard-products"
           element={
             <SellerProtectedRoute>
-            <ShopAllProducts />
-             </SellerProtectedRoute>
+              <ShopAllProducts />
+            </SellerProtectedRoute>
           }
         />
         <Route
           path="/dashboard-orders"
           element={
             <SellerProtectedRoute>
-            <ShopAllOrders />
-             </SellerProtectedRoute>
+              <ShopAllOrders />
+            </SellerProtectedRoute>
           }
         />
         <Route
           path="/dashboard-refunds"
           element={
             <SellerProtectedRoute>
-            <ShopAllRefunds />
-             </SellerProtectedRoute>
+              <ShopAllRefunds />
+            </SellerProtectedRoute>
           }
         />
         <Route
           path="/order/:id"
           element={
             <SellerProtectedRoute>
-            <ShopOrderDetails />
-             </SellerProtectedRoute>
+              <ShopOrderDetails />
+            </SellerProtectedRoute>
           }
         />
         <Route
           path="/dashboard-createEvent"
           element={
             <SellerProtectedRoute>
-            <ShopCreateEvents />
-              </SellerProtectedRoute>
+              <ShopCreateEvents />
+            </SellerProtectedRoute>
           }
         />
         <Route
           path="/dashboard-events"
           element={
             <SellerProtectedRoute>
-            <ShopAllEvents />
-              </SellerProtectedRoute>
+              <ShopAllEvents />
+            </SellerProtectedRoute>
           }
         />
 
-        <Route
-          path="/dashboard-withdraw-money"
-          element={
-            <SellerProtectedRoute>
-            <ShopWithdrawMoneyPage />
-              </SellerProtectedRoute>
-          }
-        />
+       
 
         <Route path="/shop/preview/:id" element={<ShopPreviewPage />} />
       </Routes>

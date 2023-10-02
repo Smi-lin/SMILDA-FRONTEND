@@ -11,7 +11,7 @@ const DashboardHeader = () => {
   return (
     <div className="w-full h-[80px] bg-white shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4">
       <div>
-        <Link to="/dashboard">
+        <Link to="/">
           <img
             src="https://api.logo.com/api/v2/images?logo=logo_eedc49c8-70d5-4c1a-aafb-b0d5811503a2&format=webp&margins=0&quality=60&width=500&background=transparent&u=1691480575"
             alt=""

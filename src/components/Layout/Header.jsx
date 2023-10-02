@@ -74,7 +74,7 @@ const Header = ({ activeHeading }) => {
             </Link>
           </div>
           {/* Search Bar  Box*/}
-          <div className="w-[50%] relative">
+          {/* <div className="w-[50%] relative">
             <input
               type="text"
               placeholder="Search Products...."
@@ -87,7 +87,7 @@ const Header = ({ activeHeading }) => {
               className="absolute right-2 top-1.5 cursor-pointer"
             />
             {SearchData && SearchData.length !== 0 ? (
-              <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
+              <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4 hidden">
                 {SearchData &&
                   SearchData.map((i, index) => {
                     return (
@@ -105,7 +105,7 @@ const Header = ({ activeHeading }) => {
                   })}
               </div>
             ) : null}
-          </div>
+          </div> */}
           <div className={`${styles.button}`} onClick={handleButtonClick}>
             {/* <Link to="/shopLogin"> */}
             <h1 className="text-[#fff] flex items-center">

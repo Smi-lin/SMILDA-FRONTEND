@@ -8,8 +8,6 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { product } from "../../server";
 
-
-
 const CreateProduct = () => {
   const { seller, sellerId } = useSelector((state) => state.sellerSlice);
   const { success, error } = useSelector((state) => state.productSlice);

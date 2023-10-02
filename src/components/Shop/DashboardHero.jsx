@@ -12,10 +12,10 @@ import { loadSeller } from "../../redux/actions/seller";
 
 const DashboardHero = () => {
   const dispatch = useDispatch();
-  const { orders}  = useSelector((state) => state.orderSlice);
+  const { orders } = useSelector((state) => state.orderSlice);
 
-  const  {seller, sellerId}  = useSelector((state) => state.sellerSlice);
-  console.log(seller)
+  const { seller, sellerId } = useSelector((state) => state.sellerSlice);
+  console.log(seller);
   const { products } = useSelector((state) => state.productSlice);
   const [deliveredOrder, setDeliveredOrder] = useState(null);
 
@@ -79,11 +79,9 @@ const DashboardHero = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={`/dashboard/order/${params.id}`}>
-              <Button>
-                <AiOutlineArrowRight size={20} />
-              </Button>
-            </Link>
+            <Button>
+              <AiOutlineArrowRight size={20} />
+            </Button>
           </>
         );
       },
@@ -97,7 +95,7 @@ const DashboardHero = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.reduce((acc, item) => acc + item.qty, 0),
-        total: "US$ " + item.totalPrice,
+        total: "₦ " + item.totalPrice,
         status: item.status,
       });
     });

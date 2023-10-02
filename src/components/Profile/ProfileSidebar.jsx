@@ -22,7 +22,6 @@ const ProfileSidebar = ({ setActive, active }) => {
       .then(() => {
         toast.success("Logout Successful");
         dispatch(loguout());
-        // window.location.reload(true);
         navigate("/");
       })
       .catch((error) => {

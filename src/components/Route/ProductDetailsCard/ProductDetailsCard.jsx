@@ -22,7 +22,6 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 
   const [count, setCount] = useState(1);
   const [click, setClick] = useState(false);
-  // const [select, setSelect] = useState(false);
 
   const handleMessageSubmit = () => {};
   const decrementCount = () => {
@@ -80,7 +79,11 @@ const ProductDetailsCard = ({ setOpen, data }) => {
             />
             <div className="block w-full 800px:flex">
               <div className="w-full 800px:w-[50%]">
-                <img src={`${data.images && data.images[0]?.url}`} alt="" />{" "}
+                <img
+                  src={`${data.images && data.images[0]?.url}`}
+                  alt="Image Description"
+                />
+                console.log(data.images)
                 <br />
                 <div className="flex">
                   <div>

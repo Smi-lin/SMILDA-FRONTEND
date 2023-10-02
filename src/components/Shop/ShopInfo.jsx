@@ -17,14 +17,17 @@ const ShopInfo = ({ isOwner }) => {
   useEffect(() => {
     dispatch(getAllProducts(id));
     setIsLoading(true);
-    axios.get(`${pass}/shopInfo/${id}`).then((res) => {
-     setData(res.data.shop);
-     setIsLoading(false);
-    }).catch((error) => {
-      console.log(error);
-      setIsLoading(false);
-    })
-  }, [])
+    axios
+      .get(`${pass}/shopInfo/${id}`)
+      .then((res) => {
+        setData(res.data.shop);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setIsLoading(false);
+      });
+  }, []);
 
   const logoutHandler = async () => {
     axios.get(`${pass}/logout`, {
@@ -56,33 +59,13 @@ const ShopInfo = ({ isOwner }) => {
           <div className="w-full py-5">
             <div className="w-full flex item-center justify-center">
               <img
-                src={`${data.avatar?.url}`}
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS382U5o94IKdvwFejI36JywVe7YTuELul4Uw&usqp=CAU"
+                className="w-[150px] h-[150px] rounded-full object-cover border-[3px] border-[#404140]"
                 alt=""
-                className="w-[150px] h-[150px] object-cover rounded-full"
               />
             </div>
-            <h3 className="text-center py-2 text-[20px]">
-              {data.name}
-              {/* Smilda */}
-            </h3>
-            <p className="text-[16px] text-[#000000a6] p-[10px] flex items-center">
-              {data.description}
-            </p>
           </div>
-          <div className="p-3">
-            <h5 className="font-[600]">Address</h5>
-            <h4 className="text-[#000000a6]">
-              {data.address}
-              {/* Pegamut */}
-            </h4>
-          </div>
-          <div className="p-3">
-            <h5 className="font-[600]">Phone Number</h5>
-            <h4 className="text-[#000000a6]">
-              {data.phoneNumber}
-              {/* 09072932299 */}
-            </h4>
-          </div>
+
           <div className="p-3">
             <h5 className="font-[600]">Total Products</h5>
             <h4 className="text-[#000000a6]">{products && products?.length}</h4>

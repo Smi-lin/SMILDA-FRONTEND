@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProduct, getAllProducts, getAllProductsShop } from "../../redux/productSlice";
+import {
+  deleteProduct,
+  getAllProducts,
+  getAllProductsShop,
+} from "../../redux/productSlice";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import { AiOutlineDelete, AiOutlineEye } from "react-icons/ai";
@@ -9,7 +13,7 @@ import { DataGrid } from "@material-ui/data-grid";
 
 const AllProducts = () => {
   const { products, isLoading } = useSelector((state) => state.productSlice);
-  const  {sellerId}  = useSelector((state) => state.sellerSlice);
+  const { sellerId } = useSelector((state) => state.sellerSlice);
 
   const dispatch = useDispatch();
 
@@ -62,17 +66,12 @@ const AllProducts = () => {
       headerName: "",
       type: "number",
       sortable: false,
-      renderCell: (params) => {
-        // const d = params.row.name;
-        // const product_name = d.replace(/\s+/g, " ");
-
+      renderCell: () => {
         return (
           <>
-            <Link to={`/product/${params.id}`}>
-              <Button>
-                <AiOutlineEye size={20} />
-              </Button>
-            </Link>
+            <Button>
+              <AiOutlineEye size={20} />
+            </Button>
           </>
         );
       },
@@ -95,7 +94,7 @@ const AllProducts = () => {
       },
     },
   ];
-  
+
   const row = [];
 
   products &&

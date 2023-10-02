@@ -10,7 +10,7 @@ const ShopSettingsPage = () => {
       <DashboardHeader />
       <div className="flex items-start justify-between w-full">
         <div className="w-[80px] 800px:w-[330px]">
-          <DashboardSidebar active={9} />
+          <DashboardSidebar active={8} />
         </div>
         <ShopSettings />
       </div>

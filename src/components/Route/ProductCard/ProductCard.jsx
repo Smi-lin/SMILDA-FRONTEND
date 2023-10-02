@@ -11,7 +11,10 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { addToWishlist, removeFromWishlist } from "../../../redux/wishlistSlice";
+import {
+  addToWishlist,
+  removeFromWishlist,
+} from "../../../redux/wishlistSlice";
 import { toast } from "react-toastify";
 import { addToCart } from "../../../redux/cartSlice";
 import Ratings from "../../Products/Ratings";
@@ -23,26 +26,22 @@ const ProductCard = ({ data, isReview }) => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     if (wishlist && wishlist.find((i) => i._id === data._id)) {
-      console.log(wishlist.find((i) => i._id === data._id))
       setClick(true);
     } else {
       setClick(false);
     }
   }, [wishlist]);
 
-
   const removeFromWishlistHandler = (data) => {
     dispatch(removeFromWishlist(data._id));
   };
-  
+
   const addToWishlistHandler = (data) => {
     dispatch(addToWishlist(data));
   };
-  console.log(click)
-
+  console.log(click);
 
   const addToCartHandler = (id) => {
     const isItemExists = cart && cart.find((i) => i?._id === id);
@@ -65,7 +64,7 @@ const ProductCard = ({ data, isReview }) => {
         <div className="flex justify-center"></div>
         <Link to={`/products/${data._id}`}>
           <img
-            src={`${data.images && data.images[0]?.url || data.images[0]}`}
+            src={`${(data.images && data.images[0]?.url) || data.images[0]}`}
             alt=""
             className="w-full h-[170px] object-contain"
           />
@@ -75,26 +74,28 @@ const ProductCard = ({ data, isReview }) => {
         </Link>
         <Link to={`/products/${data._id}`}>
           <h4 className="pb-3 font-[500]">
-            {data.name?.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
+            {data.name?.length > 40
+              ? data.name.slice(0, 40) + "..."
+              : data.name}
           </h4>
           <div className="flex">
-          <Ratings rating={data?.ratings} />
+            <Ratings rating={data?.ratings} />
           </div>
 
           <div className="py-2 flex items-start justify-between">
             <div className="flex">
-            <h5 className={`${styles.productDiscountPrice}`}>
+              <h5 className={`${styles.productDiscountPrice}`}>
                 {data.originalPrice === 0
                   ? data.originalPrice
                   : data.discountPrice}
-                  ₦
+                ₦
               </h5>
               <h4 className={`${styles.price}`}>
-              {data.originalPrice ? data.originalPrice + "₦" : null}
+                {data.originalPrice ? data.originalPrice + "₦" : null}
               </h4>
             </div>
             <span className="font-[400] text-[17px] text-[#68d1f7]">
-            {data?.sold_out} sold
+              {data?.sold_out} sold
             </span>
           </div>
         </Link>
